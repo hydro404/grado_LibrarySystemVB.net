@@ -28,6 +28,8 @@ Partial Class Home
         Dim Button3 As System.Windows.Forms.Button
         Dim Button2 As System.Windows.Forms.Button
         Dim Returned_logs As System.Windows.Forms.Button
+        Dim Button1 As System.Windows.Forms.Button
+        Dim Button4 As System.Windows.Forms.Button
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.bookView = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -46,6 +48,8 @@ Partial Class Home
         Button3 = New System.Windows.Forms.Button()
         Button2 = New System.Windows.Forms.Button()
         Returned_logs = New System.Windows.Forms.Button()
+        Button1 = New System.Windows.Forms.Button()
+        Button4 = New System.Windows.Forms.Button()
         CType(Me.bookView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.users_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,7 +66,7 @@ Partial Class Home
         r_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         r_btn.Font = New System.Drawing.Font("Sans Serif Collection", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         r_btn.ForeColor = System.Drawing.Color.White
-        r_btn.Location = New System.Drawing.Point(61, 444)
+        r_btn.Location = New System.Drawing.Point(61, 486)
         r_btn.Name = "r_btn"
         r_btn.Padding = New System.Windows.Forms.Padding(5, 6, 5, 0)
         r_btn.Size = New System.Drawing.Size(243, 52)
@@ -83,7 +87,7 @@ Partial Class Home
         Reservations_logs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Reservations_logs.Font = New System.Drawing.Font("Sans Serif Collection", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Reservations_logs.ForeColor = System.Drawing.Color.White
-        Reservations_logs.Location = New System.Drawing.Point(328, 444)
+        Reservations_logs.Location = New System.Drawing.Point(328, 486)
         Reservations_logs.Name = "Reservations_logs"
         Reservations_logs.Padding = New System.Windows.Forms.Padding(5, 6, 5, 0)
         Reservations_logs.Size = New System.Drawing.Size(253, 52)
@@ -103,7 +107,7 @@ Partial Class Home
         Return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Return_btn.Font = New System.Drawing.Font("Sans Serif Collection", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Return_btn.ForeColor = System.Drawing.Color.White
-        Return_btn.Location = New System.Drawing.Point(689, 444)
+        Return_btn.Location = New System.Drawing.Point(689, 486)
         Return_btn.Name = "Return_btn"
         Return_btn.Padding = New System.Windows.Forms.Padding(5, 6, 5, 0)
         Return_btn.Size = New System.Drawing.Size(243, 52)
@@ -163,7 +167,7 @@ Partial Class Home
         Returned_logs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Returned_logs.Font = New System.Drawing.Font("Sans Serif Collection", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Returned_logs.ForeColor = System.Drawing.Color.White
-        Returned_logs.Location = New System.Drawing.Point(960, 444)
+        Returned_logs.Location = New System.Drawing.Point(960, 486)
         Returned_logs.Name = "Returned_logs"
         Returned_logs.Padding = New System.Windows.Forms.Padding(5, 6, 5, 0)
         Returned_logs.Size = New System.Drawing.Size(243, 52)
@@ -171,6 +175,48 @@ Partial Class Home
         Returned_logs.Text = "VIEW RETURNED"
         Returned_logs.UseVisualStyleBackColor = False
         AddHandler Returned_logs.Click, AddressOf Me.Returned_logs_Click
+        '
+        'Button1
+        '
+        Button1.AutoSize = True
+        Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Button1.BackgroundImage = Global.grado_LibrarySystem.My.Resources.Resources.long_bg
+        Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(37, Byte), Integer))
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Button1.Font = New System.Drawing.Font("Sans Serif Collection", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Button1.ForeColor = System.Drawing.Color.White
+        Button1.Location = New System.Drawing.Point(195, 419)
+        Button1.Name = "Button1"
+        Button1.Padding = New System.Windows.Forms.Padding(5, 6, 5, 0)
+        Button1.Size = New System.Drawing.Size(243, 52)
+        Button1.TabIndex = 19
+        Button1.Text = "SAVE BOOKS TABLE"
+        Button1.UseVisualStyleBackColor = False
+        AddHandler Button1.Click, AddressOf Me.Button1_Click
+        '
+        'Button4
+        '
+        Button4.AutoSize = True
+        Button4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Button4.BackgroundImage = Global.grado_LibrarySystem.My.Resources.Resources.long_bg
+        Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(37, Byte), Integer))
+        Button4.FlatAppearance.BorderSize = 0
+        Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Button4.Font = New System.Drawing.Font("Sans Serif Collection", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Button4.ForeColor = System.Drawing.Color.White
+        Button4.Location = New System.Drawing.Point(835, 419)
+        Button4.Name = "Button4"
+        Button4.Padding = New System.Windows.Forms.Padding(5, 6, 5, 0)
+        Button4.Size = New System.Drawing.Size(243, 52)
+        Button4.TabIndex = 20
+        Button4.Text = "SAVE USERS TABLE"
+        Button4.UseVisualStyleBackColor = False
+        AddHandler Button4.Click, AddressOf Me.Button4_Click
         '
         'bookView
         '
@@ -341,6 +387,8 @@ Partial Class Home
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(1282, 548)
+        Me.Controls.Add(Button4)
+        Me.Controls.Add(Button1)
         Me.Controls.Add(Me.IconButton5)
         Me.Controls.Add(Returned_logs)
         Me.Controls.Add(Button2)
