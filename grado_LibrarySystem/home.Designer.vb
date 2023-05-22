@@ -227,6 +227,7 @@ Partial Class Home
         Me.bookView.Name = "bookView"
         Me.bookView.ReadOnly = True
         Me.bookView.RowTemplate.Height = 25
+        Me.bookView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.bookView.Size = New System.Drawing.Size(604, 275)
         Me.bookView.TabIndex = 0
         '
@@ -253,6 +254,7 @@ Partial Class Home
         Me.users_view.Name = "users_view"
         Me.users_view.ReadOnly = True
         Me.users_view.RowTemplate.Height = 25
+        Me.users_view.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.users_view.Size = New System.Drawing.Size(604, 275)
         Me.users_view.TabIndex = 2
         '

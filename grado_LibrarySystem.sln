@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "grado_LibrarySystem", "grado_LibrarySystem\grado_LibrarySystem.vbproj", "{22534AC6-B103-4A58-B6B0-7A6E668E9A04}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "grado_LibrarySystem", "grado_LibrarySystem\grado_LibrarySystem.vbproj", "{22534AC6-B103-4A58-B6B0-7A6E668E9A04}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Book_Reservation", "Book_Reservation\Book_Reservation.vdproj", "{CA5ACE0F-690C-4608-850A-902FC1992EF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,17 @@ Global
 		{22534AC6-B103-4A58-B6B0-7A6E668E9A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22534AC6-B103-4A58-B6B0-7A6E668E9A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22534AC6-B103-4A58-B6B0-7A6E668E9A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA5ACE0F-690C-4608-850A-902FC1992EF2}.Debug|Any CPU.ActiveCfg = Debug
+		{CA5ACE0F-690C-4608-850A-902FC1992EF2}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E87D1D9D-4EE8-4274-822C-C339E80428F6}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 EndGlobal

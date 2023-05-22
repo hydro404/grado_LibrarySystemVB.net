@@ -52,7 +52,7 @@ Public Class reserve_dialog
 
                 Dim logCmd As New MySqlCommand("INSERT INTO reservation_logs (reservation_id, log_type, log_date, log_details) VALUES (" + latestID.ToString() + ", 'RESERVATION', NOW(), '" + reserverName + " reserved the book " + reservedBook + "')", conn)
                 logCmd.ExecuteNonQuery()
-                MessageBox.Show("Item has been successfully added!", "Added!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Item has been successfully reserved!", "Reserved!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Close()
                 conn.Close()
             End If

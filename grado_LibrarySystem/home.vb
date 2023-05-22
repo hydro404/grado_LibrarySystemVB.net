@@ -124,4 +124,78 @@ Public Class Home
     Private Sub Button4_Click(sender As Object, e As EventArgs)
         ExportToExcel(users_view)
     End Sub
+
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+        Dim r_btn As Windows.Forms.Button = DirectCast(sender, Windows.Forms.Button)
+        r_btn.Enabled = False
+        Dim popup As New add_book(r_btn, Me)
+        popup.Show()
+    End Sub
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+
+        If bookView.SelectedRows.Count > 0 Then
+            ' Get the selected row
+            Dim selectedRow As DataGridViewRow = bookView.SelectedRows(0)
+
+            ' Extract the unique identifier from the row (assuming it's in the first column)
+            Dim bookID As Integer = Convert.ToInt32(selectedRow.Cells(0).Value)
+
+            ' Create the DELETE command with a parameter
+            Dim deleteCmd As New MySqlCommand("DELETE FROM books WHERE book_id = @id", conn)
+            deleteCmd.Parameters.AddWithValue("@id", bookID)
+            Dim resetIncrement As New MySqlCommand("ALTER TABLE books AUTO_INCREMENT = 1", conn)
+            ' Open the connection and execute the DELETE command
+            conn.Open()
+            deleteCmd.ExecuteNonQuery()
+            resetIncrement.ExecuteNonQuery()
+
+
+            ' Refresh the DataGridView
+            RefreshData()
+            MsgBox("BookID " + bookID.ToString() + " was deleted successfully!")
+            conn.Close()
+
+        Else
+            MsgBox("No row selected.")
+        End If
+
+    End Sub
+
+    Private isEditing As Boolean = False
+    Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
+        If isEditing Then
+            ' If currently in editing mode, set ReadOnly to True
+            bookView.ReadOnly = True
+            isEditing = False
+            MsgBox("Editing Mode Disabled!")
+        Else
+            ' If currently not in editing mode, set ReadOnly to False
+            bookView.ReadOnly = False
+            isEditing = True
+            MsgBox("Editing Mode Enabled!")
+        End If
+    End Sub
+
+    Private isEditing4 As Boolean = False
+    Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click
+        If isEditing4 Then
+            ' If currently in editing mode, set ReadOnly to True
+            users_view.ReadOnly = True
+            isEditing4 = False
+            MsgBox("Editing Mode Disabled!")
+        Else
+            ' If currently not in editing mode, set ReadOnly to False
+            users_view.ReadOnly = False
+            isEditing4 = True
+            MsgBox("Editing Mode Enabled!")
+        End If
+    End Sub
+
+    Private Sub IconButton6_Click(sender As Object, e As EventArgs) Handles IconButton6.Click
+        Dim r_btn As Windows.Forms.Button = DirectCast(sender, Windows.Forms.Button)
+        r_btn.Enabled = False
+        Dim popup As New add_user(r_btn, Me)
+        popup.Show()
+    End Sub
 End Class
