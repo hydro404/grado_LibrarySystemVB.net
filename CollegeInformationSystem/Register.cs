@@ -68,7 +68,7 @@ namespace CollegeInformationSystem
                         string[] values = {emailText, passwordText};
 
                         databaseConnection.InsertData(tableName, columnNames, values);
-                        MessageBox.Show("Successfully Registered!");
+                        
                     }
                     else
                     {

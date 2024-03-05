@@ -165,6 +165,7 @@
             this.register_link.TabStop = true;
             this.register_link.Text = "I don\'t have an account";
             this.register_link.VisitedLinkColor = System.Drawing.SystemColors.ButtonFace;
+            this.register_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.register_link_LinkClicked);
             // 
             // login_form
             // 
@@ -180,6 +181,7 @@
             this.Controls.Add(this.login_label);
             this.Controls.Add(this.picturebox_wave);
             this.Font = new System.Drawing.Font("Sans Serif Collection", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "login_form";

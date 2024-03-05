@@ -84,16 +84,54 @@ namespace CollegeInformationSystem
 
                     // Execute the query
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Registered!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error inserting data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email already exists. Please try again.");
             }
             finally
             {
                 Close();
             }
+        }
+
+        public bool CheckLoginCredentials(string email, string password)
+        {
+            bool isAuthenticated = false;
+
+            try
+            {
+                Open();
+
+                // Hash the provided password
+                string hashedPassword = HashPassword(password);
+
+                // Construct the SQL command for checking login credentials
+                string query = "SELECT COUNT(*) FROM users WHERE email = @Email AND password = @Password";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Password", hashedPassword);
+
+                    // Execute the query
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    // If there is a matching user, set isAuthenticated to true
+                    isAuthenticated = count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking login credentials: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Close();
+            }
+
+            return isAuthenticated;
         }
     }
 }

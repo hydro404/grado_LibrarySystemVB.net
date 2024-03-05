@@ -164,6 +164,7 @@
             this.Controls.Add(this.email_label);
             this.Controls.Add(this.register_label);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "register_form";
